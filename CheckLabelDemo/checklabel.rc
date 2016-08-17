@@ -1,0 +1,382 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 331, 228
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "About"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         135,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,2,2,327,223,WS_EX_TRANSPARENT
+    PUSHBUTTON      "Acknowledgements",IDC_ACKNOWLEDGEMENTS,8,211,74,13,BS_NOTIFY | BS_FLAT | NOT WS_TABSTOP
+END
+
+IDD_CHECKLABEL_DIALOG DIALOGEX 0, 0, 638, 327
+STYLE DS_SETFONT | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_APPWINDOW
+CAPTION "Check Label Demo v1.0"
+MENU IDR_MENU1
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_RESULT,13,24,256,192,WS_BORDER
+    LTEXT           "",IDC_INPUT,273,24,256,192,WS_BORDER
+    EDITTEXT        IDC_MESSAGES,13,220,258,78,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_VSCROLL
+    DEFPUSHBUTTON   "Set Params",IDOK,13,301,50,14
+    PUSHBUTTON      "Training",IDC_TRAINING,83,301,50,14
+    PUSHBUTTON      "Start",IDC_START,153,301,50,14
+    CONTROL         "Sample 1",IDC_SAMPLE_1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,285,230,45,10
+    CONTROL         "Sample 2",IDC_SAMPLE_2,"Button",BS_AUTORADIOBUTTON,285,250,45,10
+    CONTROL         "Sample 3",IDC_SAMPLE_3,"Button",BS_AUTORADIOBUTTON,285,270,45,10
+    CONTROL         "Debug",IDC_DEBUG,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,295,289,37,10
+    EDITTEXT        IDC_ROT_TOL,452,222,28,14,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNLEFT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,480,221,11,14
+    EDITTEXT        IDC_HORZ_DISP,452,240,28,14,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNLEFT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,480,238,11,14
+    EDITTEXT        IDC_VERT_DISP,452,259,28,14,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNLEFT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS | UDS_HOTTRACK,480,259,11,14
+    EDITTEXT        IDC_VARIATIO,452,277,28,14,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "Close",IDCANCEL,581,306,50,14
+    GROUPBOX        "Pre-defined Samples",IDC_STATIC,278,220,77,66
+    LTEXT           "Rotation Tolerance:",IDC_STATIC,367,223,64,8
+    LTEXT           "Horizontal Displacement Tolerance:",IDC_STATIC,367,238,78,18
+    LTEXT           "Vertical Displacement Tolerance:",IDC_STATIC,367,258,70,17
+    LTEXT           "Allowable Label Variation:",IDC_STATIC,367,276,70,17
+    PUSHBUTTON      "&Step",IDC_STEP,223,301,50,14
+    CONTROL         "Step-Through",IDC_STEP_THROUGH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,295,303,59,10
+    GROUPBOX        "",IDC_STATIC,7,14,529,306
+    LTEXT           "",IDC_STATUS,545,21,79,24
+    LTEXT           "degrees",IDC_STATIC,493,225,26,8
+    LTEXT           "mm",IDC_STATIC,493,241,12,8
+    LTEXT           "mm",IDC_STATIC,493,263,12,8
+    LTEXT           "%",IDC_STATIC,484,280,8,8
+    GROUPBOX        "Running Counts",IDC_STATIC,539,58,92,68
+    LTEXT           "Passed:",IDC_STATIC,546,72,26,8
+    LTEXT           "Rejected:",IDC_STATIC,546,91,32,8
+    LTEXT           "Rework:",IDC_STATIC,546,109,28,8
+    EDITTEXT        IDC_COUNT_1,581,71,21,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_COUNT_2,581,89,21,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_COUNT_3,581,107,21,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "",IDC_PERC_1,606,73,20,11
+    LTEXT           "",IDC_PERC_2,606,90,20,11
+    LTEXT           "",IDC_PERC_3,606,108,20,11
+    LTEXT           "Camera Status:",IDC_STATIC,541,136,49,8
+    LTEXT           "Light Trigger:",IDC_STATIC,541,148,42,8
+    LTEXT           "Rejector PLC Signal:",IDC_STATIC,541,160,66,8
+    LTEXT           "",IDC_STATE_1,611,135,20,10
+    LTEXT           "",IDC_STATE_2,611,147,20,10
+    LTEXT           "",IDC_STATE_3,611,160,20,10
+    CONTROL         136,IDC_STATIC,"Static",SS_BITMAP,538,245,93,33
+    CONTROL         138,IDC_STATIC,"Static",SS_BITMAP,548,186,72,36
+    CTEXT           "www.lightningcube.com",IDC_STATIC,536,279,95,13
+END
+
+IDD_ABOUTBOX1 DIALOGEX 0, 0, 294, 118
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "About"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Check Label Demo Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2006,2008 Lightning Cube Software",IDC_STATIC,40,25,156,8
+    DEFPUSHBUTTON   "OK",IDOK,237,97,50,14,WS_GROUP
+    LTEXT           "This software is based in part on the work of the Independent JPEG Group.",IDC_STATIC,40,68,244,8
+    LTEXT           "Uses OpenCV, Copyright (c) 2000,2001, Intel Corporation, all rights reserved.",IDC_STATIC,40,78,244,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "checklabel MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "checklabel"
+            VALUE "LegalCopyright", "Copyright (C) 2005"
+            VALUE "OriginalFilename", "checklabel.EXE"
+            VALUE "ProductName", "checklabel Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 329
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 226
+    END
+
+    IDD_CHECKLABEL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 631
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 320
+    END
+
+    IDD_ABOUTBOX1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 287
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LC_LOGO             BITMAP                  "res\\lc_logo.256.bmp"
+IDB_DEMO                BITMAP                  "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About CheckLabel..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PARAMS DIALOG  0, 0, 401, 226
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_MASTER,0,0,256,192,WS_BORDER
+    PUSHBUTTON      ">>",IDC_ADD,272,39,22,14
+    LISTBOX         IDC_ITEMS,301,7,93,111,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "<<",IDC_REMOVE,272,59,22,14
+    DEFPUSHBUTTON   "OK",IDOK,7,205,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,61,205,50,14
+    CONTROL         "Search Regions for Bottle Edges",IDC_SEARCH_RGN,"Button",BS_AUTORADIOBUTTON | BS_MULTILINE | WS_GROUP,291,134,77,18
+    CONTROL         "Label Region",IDC_LABEL_RGN,"Button",BS_AUTORADIOBUTTON,291,155,58,10
+    CONTROL         "Search Region For Label",IDC_SEARCH_MSR_RGN,"Button",BS_AUTORADIOBUTTON | BS_TOP | BS_MULTILINE,291,169,79,18
+    GROUPBOX        "Type",IDC_TYPE_FRAME,286,125,109,65
+    LTEXT           "",IDC_RED,371,139,16,8,SS_SUNKEN
+    LTEXT           "",IDC_GREEN,371,155,16,8,SS_SUNKEN
+    LTEXT           "",IDC_BLUE,371,171,16,8,SS_SUNKEN
+    PUSHBUTTON      "Help",IDC_BUTTON1,119,205,50,14
+END
+
+IDD_ACKNOWLEDGEMENTS DIALOGEX 0, 0, 267, 63
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Acknowledgements"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,210,42,50,14
+    LTEXT           "This software is based in part on the work of the Independent JPEG Group.",IDC_STATIC,7,9,244,8
+    LTEXT           "Uses OpenCV, Copyright (c) 2000,2001, Intel Corporation, all rights reserved.",IDC_STATIC,7,19,244,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PARAMS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_ACKNOWLEDGEMENTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\checklabel.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\checklabel.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU 
+BEGIN
+    MENUITEM "Solution",                    65535, GRAYED
+    MENUITEM "Camera Setup",                65535, GRAYED
+    MENUITEM "Calibration",                 65535, GRAYED
+    MENUITEM "Light Setup",                 65535, GRAYED
+    MENUITEM "I/O",                         65535, GRAYED
+    MENUITEM "Database Log",                65535, GRAYED
+    POPUP "Help"
+    BEGIN
+        MENUITEM "Help",                        IDR_HELP
+        MENUITEM "About",                       ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_LOGO         BITMAP                  "res\\logo.v3.256.bmp"
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\checklabel.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

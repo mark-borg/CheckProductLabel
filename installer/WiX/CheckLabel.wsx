@@ -1,0 +1,273 @@
+<?xml version='1.0'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+
+	<Product Name='CheckLabel Demo' Version='1.0' Id='{A32C3E0C-F726-43c5-A91D-32947766B8AC}' Manufacturer='Lightning Cube Software' Language='1033' Codepage='1252' UpgradeCode='{E681088F-E1B1-4494-A45E-CA2645111F4E}'>
+	
+		<Package Id='*' Description='CheckLabel Demo Installer' Comments='(c) Lightning Cube Software' Manufacturer='Lightning Cube Software' InstallerVersion='300' Keywords='Installer' Compressed='yes' Languages='1033' SummaryCodepage='1252' />
+		
+		<!-- ****** CHANGE BELOW ****** -->		
+			<Property Id='ARPCOMMENTS'>CheckLabel Demo</Property>
+			<Property Id='ARPURLINFOABOUT'>http://www.lightningcube.com</Property>		
+			<Property Id='ARPURLUPDATEINFO'>http://www.lightningcube.com/pages/custom_solutions/vision/index.htm</Property>
+			<Property Id='ARPCONTACT'>support@lightningcube.com</Property>
+			<Property Id='ARPNOREPAIR'>1</Property>
+		<!-- ********************* -->
+
+		
+		<Media Id='1' Cabinet='package.cab' EmbedCab='yes' DiskPrompt="CD-ROM #1" />
+
+		<Property Id='DiskPrompt' Value="CheckLabel Demo Installation [1]" />
+		
+		<Property Id="ALLUSERS">1</Property> 
+				
+		<Directory Id='TARGETDIR' Name='SourceDir'>
+			<Directory Id='ProgramFilesFolder' Name='PFiles'>
+		        <Directory Id='LightningCubeFolder' Name='Lightning Cube Software'>
+					<Directory Id='INSTALLDIR' Name='CheckLabelDemo'>
+
+						<Component Id='MainExecutable' Guid='{5159CB46-B588-44dc-9CD4-A446E949A3EF}'>
+							<File Id="CheckLabel" Name='CheckLabel.exe' DiskId='1' Source='../../../CheckLabel/CheckLabel.exe' Vital='yes'>
+								<Shortcut Id="CheckLabelDemoMenuShortcut" Directory="ProgramMenuDir" Name="CheckLabel" WorkingDirectory='INSTALLDIR' Icon="CheckLabelIcon" IconIndex="0" />
+								<Shortcut Id="CheckLabelDesktopShortcut" Directory="DesktopFolder" Name="CheckLabel" WorkingDirectory='INSTALLDIR' Icon="CheckLabelIcon" IconIndex="0" />
+							</File>
+						</Component>
+						
+			            <Component Id='Manual' Guid='{3BE15BD7-E4CF-455a-99B7-42140C3F0F96}'>
+							<File Id='Manual' Name='CheckLabel.chm' DiskId='1' Source='../../../CheckLabel/CheckLabel.chm' Vital='yes' >
+								<Shortcut Id="HelpFileMenuShortcut" Directory="ProgramMenuDir" WorkingDirectory='INSTALLDIR' Name="CheckLabel Help" />
+								<Shortcut Id="HelpFileDesktopShortcut" Directory="DesktopFolder" WorkingDirectory='INSTALLDIR' Name="CheckLabel Help" />
+							</File>
+			            </Component>
+						
+			            <Component Id='EULA' Guid='{7E94C323-E888-4c4d-A761-531E06EABC35}'>
+							<File Id='EULA' Name='license.txt' DiskId='1' Source='../../../CheckLabel/license.txt' Vital='yes'>
+								<Shortcut Id="EULAMenuShortcut" Directory="ProgramMenuDir" WorkingDirectory='INSTALLDIR' Name="license" />
+							</File>
+			            </Component>
+						
+						<Component Id='DLLs' Guid='{48FFE3C5-C0F4-4a75-9EF4-99D19F251907}'>
+							<File Id="cxcoreLibrary" Name='cxcore096va.dll' DiskId='1' Source='../../../CheckLabel/cxcore096va.dll' Vital='yes' />
+							<File Id="cvLibrary" Name='cv096va.dll' DiskId='1' Source='../../../CheckLabel/cv096va.dll' Vital='yes' />
+							<File Id="highguiLibrary" Name='highgui096va.dll' DiskId='1' Source='../../../CheckLabel/highgui096va.dll' Vital='yes' />
+						</Component>
+
+						<Merge Id='CRT' Language='1033' src='d:\Program Files\Common Files\Merge Modules\microsoft_vc80_crt_x86.msm' DiskId='1' />
+						<Merge Id='CRT Policy' Language='1033' src='d:\Program Files\Common Files\Merge Modules\policy_8_0_Microsoft_VC80_CRT_x86.msm' DiskId='1' />
+
+						<Component Id='Configuration' Guid='{C4293521-48E9-4482-BB3E-918CAB3DC5A7}'>
+							<File Id="Config1" Name='sample1.cfg' DiskId='1' Source='../../../CheckLabel/sample1.cfg' Vital='yes' />
+							<File Id="Config2" Name='sample2.cfg' DiskId='1' Source='../../../CheckLabel/sample2.cfg' Vital='yes' />
+							<File Id="Config3" Name='sample3.cfg' DiskId='1' Source='../../../CheckLabel/sample3.cfg' Vital='yes' />
+						</Component>
+						
+						<Directory Id='SAMPLES_DIR' Name='data'>
+							<Directory Id='TEST1' Name='test1'>
+								<Directory Id='TEST1_TRAINING' Name='training'>
+									<Component Id='Test1Training' Guid='{1988F7FF-6B0E-4b13-8E0A-69646704EC5A}'>
+										<File Id="T1Tr00" Name='img00.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img00.bmp' Vital='yes' />
+										<File Id="T1Tr01" Name='img01.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img01.bmp' Vital='yes' />
+										<File Id="T1Tr02" Name='img02.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img02.bmp' Vital='yes' />
+										<File Id="T1Tr03" Name='img03.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img03.bmp' Vital='yes' />
+										<File Id="T1Tr04" Name='img04.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img04.bmp' Vital='yes' />
+										<File Id="T1Tr05" Name='img05.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img05.bmp' Vital='yes' />
+										<File Id="T1Tr06" Name='img06.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img06.bmp' Vital='yes' />
+										<File Id="T1Tr07" Name='img07.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img07.bmp' Vital='yes' />
+										<File Id="T1Tr08" Name='img08.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img08.bmp' Vital='yes' />
+										<File Id="T1Tr09" Name='img09.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img09.bmp' Vital='yes' />
+										<File Id="T1Tr10" Name='img10.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img10.bmp' Vital='yes' />
+										<File Id="T1Tr11" Name='img11.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img11.bmp' Vital='yes' />
+										<File Id="T1Tr12" Name='img12.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img12.bmp' Vital='yes' />
+										<File Id="T1Tr13" Name='img13.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img13.bmp' Vital='yes' />
+										<File Id="T1Tr14" Name='img14.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img14.bmp' Vital='yes' />
+										<File Id="T1Tr15" Name='img15.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img15.bmp' Vital='yes' />
+										<File Id="T1Tr16" Name='img16.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/training/img16.bmp' Vital='yes' />
+									</Component>
+								</Directory>
+								<Directory Id='TEST1_TESTING' Name='testing'>
+									<Component Id='Test1Testing' Guid='{789B0C0A-7EE1-4576-A5B9-6025047AA8D3}'>
+										<File Id="T1Ts00" Name='img00.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img00.bmp' Vital='yes' />
+										<File Id="T1Ts01" Name='img01.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img01.bmp' Vital='yes' />
+										<File Id="T1Ts02" Name='img02.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img02.bmp' Vital='yes' />
+										<File Id="T1Ts03" Name='img03.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img03.bmp' Vital='yes' />
+										<File Id="T1Ts04" Name='img04.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img04.bmp' Vital='yes' />
+										<File Id="T1Ts05" Name='img05.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img05.bmp' Vital='yes' />
+										<File Id="T1Ts06" Name='img06.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img06.bmp' Vital='yes' />
+										<File Id="T1Ts07" Name='img07.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img07.bmp' Vital='yes' />
+										<File Id="T1Ts08" Name='img08.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img08.bmp' Vital='yes' />
+										<File Id="T1Ts09" Name='img09.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img09.bmp' Vital='yes' />
+										<File Id="T1Ts10" Name='img10.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img10.bmp' Vital='yes' />
+										<File Id="T1Ts11" Name='img11.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img11.bmp' Vital='yes' />
+										<File Id="T1Ts12" Name='img12.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img12.bmp' Vital='yes' />
+										<File Id="T1Ts13" Name='img13.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img13.bmp' Vital='yes' />
+										<File Id="T1Ts14" Name='img14.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img14.bmp' Vital='yes' />
+										<File Id="T1Ts15" Name='img15.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img15.bmp' Vital='yes' />
+										<File Id="T1Ts16" Name='img16.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img16.bmp' Vital='yes' />
+										<File Id="T1Ts17" Name='img17.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img17.bmp' Vital='yes' />
+										<File Id="T1Ts18" Name='img18.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img18.bmp' Vital='yes' />
+										<File Id="T1Ts19" Name='img19.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img19.bmp' Vital='yes' />
+										<File Id="T1Ts20" Name='img20.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img20.bmp' Vital='yes' />
+										<File Id="T1Ts21" Name='img21.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img21.bmp' Vital='yes' />
+										<File Id="T1Ts22" Name='img22.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img22.bmp' Vital='yes' />
+										<File Id="T1Ts23" Name='img23.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img23.bmp' Vital='yes' />
+										<File Id="T1Ts24" Name='img24.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img24.bmp' Vital='yes' />
+										<File Id="T1Ts25" Name='img25.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img25.bmp' Vital='yes' />
+										<File Id="T1Ts26" Name='img26.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img26.bmp' Vital='yes' />
+										<File Id="T1Ts27" Name='img27.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img27.bmp' Vital='yes' />
+										<File Id="T1Ts28" Name='img28.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img28.bmp' Vital='yes' />
+										<File Id="T1Ts29" Name='img29.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img29.bmp' Vital='yes' />
+										<File Id="T1Ts30" Name='img30.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img30.bmp' Vital='yes' />
+										<File Id="T1Ts31" Name='img31.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img31.bmp' Vital='yes' />
+										<File Id="T1Ts32" Name='img32.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img32.bmp' Vital='yes' />
+										<File Id="T1Ts33" Name='img33.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img33.bmp' Vital='yes' />
+										<File Id="T1Ts34" Name='img34.bmp' DiskId='1' Source='../../../CheckLabel/data/test1/testing/img34.bmp' Vital='yes' />
+									</Component>
+								</Directory>
+							</Directory>
+
+							<Directory Id='TEST2' Name='test2'>
+								<Directory Id='TEST2_TRAINING' Name='training'>
+									<Component Id='Test2Training' Guid='{046AFCFD-26DC-4096-8E10-44D877E850CD}'>
+										<File Id="T2Tr00" Name='00.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/00.bmp' Vital='yes' />
+										<File Id="T2Tr01" Name='01.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/01.bmp' Vital='yes' />
+										<File Id="T2Tr02" Name='02.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/02.bmp' Vital='yes' />
+										<File Id="T2Tr03" Name='03.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/03.bmp' Vital='yes' />
+										<File Id="T2Tr04" Name='04.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/04.bmp' Vital='yes' />
+										<File Id="T2Tr05" Name='05.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/05.bmp' Vital='yes' />
+										<File Id="T2Tr06" Name='06.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/06.bmp' Vital='yes' />
+										<File Id="T2Tr07" Name='07.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/07.bmp' Vital='yes' />
+										<File Id="T2Tr08" Name='08.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/08.bmp' Vital='yes' />
+										<File Id="T2Tr09" Name='09.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/09.bmp' Vital='yes' />
+										<File Id="T2Tr10" Name='10.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/10.bmp' Vital='yes' />
+										<File Id="T2Tr11" Name='11.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/training/11.bmp' Vital='yes' />
+									</Component>
+								</Directory>
+								<Directory Id='TEST2_TESTING' Name='testing'>
+									<Component Id='Test2Testing' Guid='{F0B2FB08-82B5-4c38-B6F4-A6A5A5F3B810}'>
+										<File Id="T2Ts00" Name='00.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/00.bmp' Vital='yes' />
+										<File Id="T2Ts01" Name='01.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/01.bmp' Vital='yes' />
+										<File Id="T2Ts02" Name='02.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/02.bmp' Vital='yes' />
+										<File Id="T2Ts03" Name='03.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/03.bmp' Vital='yes' />
+										<File Id="T2Ts04" Name='04.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/04.bmp' Vital='yes' />
+										<File Id="T2Ts05" Name='05.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/05.bmp' Vital='yes' />
+										<File Id="T2Ts06" Name='06.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/06.bmp' Vital='yes' />
+										<File Id="T2Ts07" Name='07.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/07.bmp' Vital='yes' />
+										<File Id="T2Ts08" Name='08.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/08.bmp' Vital='yes' />
+										<File Id="T2Ts09" Name='09.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/09.bmp' Vital='yes' />
+										<File Id="T2Ts10" Name='10.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/10.bmp' Vital='yes' />
+										<File Id="T2Ts11" Name='11.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/11.bmp' Vital='yes' />
+										<File Id="T2Ts12" Name='12.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/12.bmp' Vital='yes' />
+										<File Id="T2Ts13" Name='13.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/13.bmp' Vital='yes' />
+										<File Id="T2Ts14" Name='14.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/14.bmp' Vital='yes' />
+										<File Id="T2Ts15" Name='15.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/15.bmp' Vital='yes' />
+										<File Id="T2Ts16" Name='16.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/16.bmp' Vital='yes' />
+										<File Id="T2Ts17" Name='17.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/17.bmp' Vital='yes' />
+										<File Id="T2Ts18" Name='18.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/18.bmp' Vital='yes' />
+										<File Id="T2Ts19" Name='19.bmp' DiskId='1' Source='../../../CheckLabel/data/test2/testing/19.bmp' Vital='yes' />
+									</Component>
+								</Directory>
+							</Directory>
+
+							<Directory Id='TEST3' Name='test3'>
+								<Directory Id='TEST3_TRAINING' Name='training'>
+									<Component Id='Test3Training' Guid='{9F3A2026-BEAE-4a9e-A1EE-F462ECE57251}'>
+										<File Id="T3Tr00" Name='00.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/training/00.bmp' Vital='yes' />
+										<File Id="T3Tr01" Name='01.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/training/01.bmp' Vital='yes' />
+										<File Id="T3Tr02" Name='02.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/training/02.bmp' Vital='yes' />
+										<File Id="T3Tr03" Name='03.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/training/03.bmp' Vital='yes' />
+										<File Id="T3Tr04" Name='04.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/training/04.bmp' Vital='yes' />
+										<File Id="T3Tr05" Name='05.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/training/05.bmp' Vital='yes' />
+									</Component>
+								</Directory>
+								<Directory Id='TEST3_TESTING' Name='testing'>
+									<Component Id='Test3Testing' Guid='{B73B619B-62A0-43a4-B5D6-D106B63783C0}'>
+										<File Id="T3Ts00" Name='00.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/00.bmp' Vital='yes' />
+										<File Id="T3Ts01" Name='01.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/01.bmp' Vital='yes' />
+										<File Id="T3Ts02" Name='02.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/02.bmp' Vital='yes' />
+										<File Id="T3Ts03" Name='03.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/03.bmp' Vital='yes' />
+										<File Id="T3Ts04" Name='04.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/04.bmp' Vital='yes' />
+										<File Id="T3Ts05" Name='05.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/05.bmp' Vital='yes' />
+										<File Id="T3Ts06" Name='06.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/06.bmp' Vital='yes' />
+										<File Id="T3Ts07" Name='07.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/07.bmp' Vital='yes' />
+										<File Id="T3Ts08" Name='08.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/08.bmp' Vital='yes' />
+										<File Id="T3Ts09" Name='09.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/09.bmp' Vital='yes' />
+										<File Id="T3Ts10" Name='10.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/10.bmp' Vital='yes' />
+										<File Id="T3Ts11" Name='11.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/11.bmp' Vital='yes' />
+										<File Id="T3Ts12" Name='12.bmp' DiskId='1' Source='../../../CheckLabel/data/test3/testing/12.bmp' Vital='yes' />
+									</Component>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+
+			<Directory Id='SystemFolder' Name='SFiles'>
+				<Component Id='SystemDLLs' Guid='{668C60CB-013C-4b56-8993-CA148D091632}' SharedDllRefCount='yes'>
+					<File Id="cxcoreLibrarySys" Name='cxcore096va.dll' DiskId='1' Source='../../../CheckLabel/cxcore096va.dll' Vital='yes' />
+					<File Id="cvLibrarySys" Name='cv.dll' DiskId='1' Source='../../../CheckLabel/cv096va.dll' Vital='yes' />
+					<File Id="highguiLibrarySys" Name='highgui096va.dll' DiskId='1' Source='../../../CheckLabel/highgui096va.dll' Vital='yes' />
+				</Component>
+			</Directory>
+			
+			<Directory Id="ProgramMenuFolder" Name="Programs">
+				<Directory Id="ProgramMenuDir" Name="CheckLabel Demo"/>
+			</Directory>
+
+			<Directory Id="DesktopFolder" Name="Desktop" />				
+		</Directory>
+		
+		<Feature Id='Complete' Title='CheckLabel Demo' Description='CheckLabel Demo Installation' Display='expand' Level='1' ConfigurableDirectory='INSTALLDIR'>
+			<ComponentRef Id='MainExecutable' />
+			<ComponentRef Id='DLLs' />
+			<ComponentRef Id='SystemDLLs' />
+			<ComponentRef Id='Manual' />
+			<ComponentRef Id='EULA' />
+			<ComponentRef Id='Configuration' />
+			<ComponentRef Id='Test1Training' />
+			<ComponentRef Id='Test1Testing' />
+			<ComponentRef Id='Test2Training' />
+			<ComponentRef Id='Test2Testing' />
+			<ComponentRef Id='Test3Training' />
+			<ComponentRef Id='Test3Testing' />
+			<MergeRef Id='CRT' />
+			<MergeRef Id='CRT Policy' />
+		</Feature>		
+
+		<Property Id="WIXUI_INSTALLDIR" Value="LightningCubeFolder" />
+		<UIRef Id="WixUI_ErrorProgressText" />
+		<UIRef Id="WixUI_InstallDir" />
+		<UIRef Id="WixUI_Common" />
+		
+		<WixVariable Id="WixUIBannerBmp" Value="bitmaps/bannrbmp.bmp" />  
+		<WixVariable Id="WixUIDialogBmp" Value="bitmaps/dlgbmp.bmp" />  
+		<WixVariable Id="WixUILicenseRtf" Value="LICENSE.rtf" />
+		
+		<Icon Id="CheckLabelIcon" SourceFile="../../../CheckLabel/CheckLabel.ico" />
+
+		
+		<CustomAction Id='LaunchApplication' FileKey='CheckLabel' ExeCommand='"[INSTALLDIR]\"' Execute="immediate" Impersonate="yes" Return='asyncNoWait'></CustomAction>
+		
+		<CustomAction Id='ResetCheckbox' Property="LAUNCHAPPONEXIT" Value="0" />
+		
+		<Property Id="LAUNCHAPPONEXIT" Value="1" />
+		<UI>
+			<Publish Dialog="MyExitDialog" Control="Finish" Order="1" Event="DoAction" Value="LaunchApplication">LAUNCHAPPONEXIT AND NOT (WixUI_InstallMode = "Remove")</Publish> 
+			
+			<Publish Dialog="MyExitDialog" Control="Finish" Order="2" Event="EndDialog" Value="Return"></Publish> 
+		</UI>		
+		
+
+		
+		<!-- This will ensure that the LaunchConditions are executed only after searching -->
+		<InstallUISequence>
+			<LaunchConditions				After='AppSearch' />
+		</InstallUISequence>
+		
+		<InstallExecuteSequence>
+			<LaunchConditions				After='AppSearch' />
+		</InstallExecuteSequence>
+
+		
+	</Product>
+	
+</Wix>
